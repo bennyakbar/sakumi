@@ -38,11 +38,11 @@ ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/000-default.conf
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 
-# Enable Apache mod_rewrite
-RUN a2enmod rewrite
+# Configure Apache to listen on port 7860 (Hugging Face requirement)
+RUN sed -i 's/80/7860/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
 
-# Expose port 80
-EXPOSE 80
+# Expose port 7860
+EXPOSE 7860
 
 # Start Apache via entrypoint script
 COPY run.sh /run.sh
