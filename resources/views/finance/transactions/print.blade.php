@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuitansi #{{ $transaction->transaction_number }}</title>
+    <title>Kwitansi #{{ $transaction->transaction_number }}</title>
     <style>
         @page {
             size: A5 landscape;
@@ -239,7 +239,7 @@
             </div>
             <div class="info-item">
                 <div class="info-label">Siswa / Kelas</div>
-                <div class="info-value">{{ Str::limit($transaction->student->name, 20) }}
+                <div class="info-value">{{ $transaction->student->name }}
                     ({{ $transaction->student->schoolClass->name }})</div>
             </div>
             <div class="info-item">

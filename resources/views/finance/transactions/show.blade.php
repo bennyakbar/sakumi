@@ -7,7 +7,7 @@
         <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
             <div class="p-6 border-b border-gray-200 flex justify-between items-center bg-gray-50">
                 <div>
-                    <h3 class="font-bold text-lg text-gray-800">Kuitansi Pembayaran</h3>
+                    <h3 class="font-bold text-lg text-gray-800">Kwitansi Pembayaran</h3>
                     <p class="text-sm text-gray-500">{{ $transaction->transaction_number }}</p>
                 </div>
                 <div class="flex gap-2 items-center">
@@ -23,7 +23,7 @@
                                     d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z">
                                 </path>
                             </svg>
-                            Cetak Kuitansi
+                            Cetak Kwitansi
                         </a>
                     @endif
                 </div>

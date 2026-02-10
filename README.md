@@ -16,7 +16,7 @@ Aplikasi manajemen keuangan sekolah berbasis Laravel.
 - Dashboard dinamis dengan statistik real-time
 - Manajemen transaksi pembayaran
 - Laporan keuangan (harian, bulanan, tahunan)
-- Kuitansi cetak (A5 landscape, dual logo)
+- Kwitansi cetak (A5 landscape, dual logo)
 - Manajemen data siswa, kelas, dan jenis biaya
 - Multi-user dengan role Admin TU
 

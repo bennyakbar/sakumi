@@ -65,15 +65,16 @@ class ReportController extends Controller
             ->get();
 
         // Income by Class
-        $incomeByClass = Transaction::selectRaw('school_classes.name as class_name, SUM(transactions.total_amount) as total')
+        // Income by Class
+        $incomeByClass = Transaction::selectRaw('classes.name as class_name, SUM(transactions.total_amount) as total')
             ->join('students', 'transactions.student_id', '=', 'students.id')
-            ->join('school_classes', 'students.class_id', '=', 'school_classes.id')
+            ->join('classes', 'students.class_id', '=', 'classes.id')
             ->whereMonth('transactions.transaction_date', $month)
             ->whereYear('transactions.transaction_date', $year)
             ->where('transactions.status', 'completed')
             ->where('transactions.transaction_type', 'income')
-            ->groupBy('school_classes.name')
-            ->orderBy('school_classes.name')
+            ->groupBy('classes.name')
+            ->orderBy('classes.name')
             ->get();
 
         return view('finance.reports.index', compact(
